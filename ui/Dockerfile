@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN npm run build -- --output-path=dist --configuration production
+RUN npm run build
 
 # Stage 2: Serve with Nginx
 FROM nginx:alpine
@@ -14,10 +14,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 
 # Copy Angular build (check path!)
-COPY --from=build /app/dist/browser /usr/share/nginx/html
-
-# Copy custom Nginx config
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/dist/todo-ui/browser /usr/share/nginx/html
 
 # Let Cloud Run or hosting platform inject the correct port
 ENV PORT=8080
