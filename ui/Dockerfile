@@ -14,10 +14,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 
 # Copy Angular build (check path!)
-COPY --from=build /app/dist/todo-ui/browser /usr/share/nginx/html
-
-# Ensure readable permissions
-RUN chown -R root:root /usr/share/nginx/html && chmod -R 755 /usr/share/nginx/html
+COPY --from=build /app/dist/browser /usr/share/nginx/html
 
 # Copy custom Nginx config
 COPY default.conf /etc/nginx/conf.d/default.conf
