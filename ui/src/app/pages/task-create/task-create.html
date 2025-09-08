@@ -1,0 +1,17 @@
+<form (ngSubmit)="createTask()">
+    <label>Title:</label>
+    <input type="text" [(ngModel)]="title" name="title">
+
+    <label>Description:</label>
+    <textarea [(ngModel)]="description" name="description"></textarea>
+
+    <label>Assign to User:</label>
+    <select [(ngModel)]="assignedUserId" name="assignedUserId">
+        <option value="">-- None --</option>
+        <option *ngFor="let user of users()" [value]="user.id">{{user.firstName}} {{user.lastName}}</option>
+    </select>
+
+    <div class="error" @if(errorMessage())>{{ errorMessage() }}</div>
+
+    <button type="submit">Create</button>
+</form>

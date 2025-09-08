@@ -1,0 +1,131 @@
+.home-container {
+    background: linear-gradient(90deg, #673ab7, #6a8ca8);
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 10vh;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: center;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 26px;
+        text-decoration: none;
+        transition: 0.3s;
+        height: 20px;
+        width: 100px;
+    }
+
+    .primary {
+        background: #ffcc80;
+        color: #673ab7;
+
+        &:hover {
+            background: #ffb74d;
+        }
+    }
+
+    .secondary {
+        background: white;
+        color: #673ab7;
+
+        &:hover {
+            background: #f1f1f1;
+        }
+    }
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+
+    img {
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.features {
+    text-align: center;
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .feature-card {
+        background: linear-gradient(90deg, #673ab7, #6a8ca8);
+        padding: 1.5rem;
+        border-radius: 12px;
+        width: 250px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+        h3 {
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        p {
+            font-size: 1rem;
+            color: white;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}
