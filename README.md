@@ -16,7 +16,7 @@ The project adopts Clean Architecture, separating the application into distinct 
 - **API Layer**: Minimal API exposing endpoints using ASP.NET Core.
 
 ## Tech Stack
-- **Angular +20
+- **Angular +20**
 - **Tools & IDEs:** VS Code, Docker Desktop, Postgres, Git
 - **Libraries:**
   - ASP.NET Core Minimal API
