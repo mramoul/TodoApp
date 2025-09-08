@@ -1,0 +1,99 @@
+<div class="board-header">
+    <button class="add-btn" (click)="toggleCreateForm()">
+        {{ showCreateForm() ? 'Close' : 'Add Task' }}
+    </button>
+</div>
+
+<div class="board-container">
+    <div class="kanban-board">
+
+        <!-- ToDo Column -->
+        <div class="kanban-column todo">
+            <h3>To Do</h3>
+            @for(task of todoTasks(); track task.id) {
+            <div class="task-card">
+                <div class="task-card-header">
+                    <h4>{{ task.title }}</h4>
+                    <select class="status-dropdown" [ngModel]="task.status"
+                        (ngModelChange)="updateStatus(task.id, $event)">
+                        <option value="toDo">To Do</option>
+                        <option value="doing">Doing</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+
+                <p>{{ task.description }}</p>
+
+                @if(task.assignedUser != undefined)
+                {
+                <p class="assigned">
+                    Assigned to: {{ task.assignedUser.firstName }} {{ task.assignedUser.lastName }}
+                </p>
+                }
+
+            </div>
+            }
+        </div>
+
+        <!-- Doing Column -->
+        <div class="kanban-column doing">
+            <h3>Doing</h3>
+            @for(task of doingTasks(); track task.id) {
+            <div class="task-card">
+                <div class="task-card-header">
+                    <h4>{{ task.title }}</h4>
+                    <select class="status-dropdown" [ngModel]="task.status"
+                        (ngModelChange)="updateStatus(task.id, $event)">
+                        <option value="toDo">To Do</option>
+                        <option value="doing">Doing</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+
+                <p>{{ task.description }}</p>
+
+                @if(task.assignedUser != undefined)
+                {
+                <p class="assigned">
+                    Assigned to: {{ task.assignedUser.firstName }} {{ task.assignedUser.lastName }}
+                </p>
+                }
+            </div>
+            }
+        </div>
+
+        <!-- Done Column -->
+        <div class="kanban-column done">
+            <h3>Done</h3>
+            @for(task of doneTasks(); track task.id) {
+            <div class="task-card">
+                <div class="task-card-header">
+                    <h4>{{ task.title }}</h4>
+                    <select class="status-dropdown" [ngModel]="task.status"
+                        (ngModelChange)="updateStatus(task.id, $event)">
+                        <option value="toDo">To Do</option>
+                        <option value="doing">Doing</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+
+                <p>{{ task.description }}</p>
+
+                @if(task.assignedUser != undefined)
+                {
+                <p class="assigned">
+                    Assigned to: {{ task.assignedUser.firstName }} {{ task.assignedUser.lastName }}
+                </p>
+                }
+            </div>
+            }
+        </div>
+    </div>
+
+    <!-- Task Create Form -->
+    @if (showCreateForm()) {
+    <div class="task-create-panel">
+        <app-task-create (taskCreated)="loadTasks()" />
+    </div>
+    }
+</div>
