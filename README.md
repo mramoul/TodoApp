@@ -64,7 +64,7 @@ docker run -p 4200:80 todo-ui
 - Open Docker Desktop, locate the API & the UI containers, restart them if needed.
 - Access the application:
   - API: [http://localhost:5001/swagger](http://localhost:5001/swagger/index.html)
-  - UI: [http://localhost:5001/swagger](http://localhost:4200)
+  - UI: [http://localhost:4200](http://localhost:4200)
 
 - If docker option do not work, run the command "dotnet run" at the "api/ToDoApi" folder and "npm run install ng serve" at the "ui" one.
 - NOTE: you may have to change the api url at the "TodoApp/ui/src/environments/environment.ts" with your api's instance.
