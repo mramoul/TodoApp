@@ -19,5 +19,8 @@ COPY --from=build /app/dist/browser /usr/share/nginx/html
 # Copy custom Nginx config
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+# Let Cloud Run or hosting platform inject the correct port
+ENV PORT=8080
+
+EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]

@@ -22,7 +22,8 @@ WORKDIR /app
 COPY --from=build /app/publish .
 
 # Expose the application's port
-EXPOSE 5001
+EXPOSE 8080
+
 ENV ASPNETCORE_URLS=http://+:5001 
 
 # Start the application
