@@ -17,7 +17,7 @@ The project adopts Clean Architecture, separating the application into distinct 
 
 ## Tech Stack
 - **Angular +20**
-- **Tools & IDEs:** VS Code, Docker Desktop, Postgres, Git
+- **Tools & IDEs:** VS Code, Docker Desktop, SQLITE, Git, AI
 - **Libraries:**
   - ASP.NET Core Minimal API
   - Swagger (for API documentation)
