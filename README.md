@@ -46,7 +46,7 @@ The project adopts Clean Architecture, separating the application into distinct 
 ## Setup Instructions
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/mramoul/TodoApp.git
+git clone https://github.com/mramoul/TodoApp.git 
 ```
 ## API
 ```bash
