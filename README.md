@@ -44,9 +44,11 @@ The project adopts Clean Architecture, separating the application into distinct 
 
 ## Setup Instructions
 1. **Clone the Repository**
-## API
 ```bash
 git clone https://github.com/mramoul/TodoApp.git
+```
+## API
+```bash
 cd api
 docker build -t todo-api ./todoapi
 docker run -p 5001:5001 todo-api
