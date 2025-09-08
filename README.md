@@ -61,7 +61,7 @@ docker build -t todo-ui ./ui
 docker run -p 4200:80 todo-ui
 ```
 
-- Open Docker Desktop, locate the API container, and restart if needed.
+- Open Docker Desktop, locate the API & the UI containers, restart them if needed.
 - Access the application:
   - API: [http://localhost:5001/swagger](http://localhost:5001/swagger/index.html)
   - UI: [http://localhost:5001/swagger](http://localhost:4200)
