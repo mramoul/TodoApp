@@ -1,0 +1,76 @@
+body html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* App bar */
+.app-bar {
+    background: linear-gradient(90deg, #673ab7, #2196f3);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15),
+        -4px -4px 12px rgba(255, 255, 255, 0.9); // neumorphism
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.app-bar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+
+/* Navigation links */
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #673ab7;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: #f9f9f9;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    background: #ffcc80;
+    color: 673ab7;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Router outlet area */
+router-outlet {
+    flex: 1;
+    margin-top: 2rem;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    margin: 50px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(90deg, #673ab7, #2196f3);
+    color: white;
+}
