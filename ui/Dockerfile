@@ -16,7 +16,6 @@ RUN rm -rf ./*
 # Copy Angular build (check path!)
 COPY --from=build /app/dist/todo-ui/browser /usr/share/nginx/html
 
-# Let Cloud Run or hosting platform inject the correct port
 ENV PORT=8080
 
 EXPOSE 8080
