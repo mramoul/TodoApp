@@ -6,7 +6,7 @@
 <img width="1728" height="993" alt="Screenshot 2025-09-08 at 2 01 25 AM" src="https://github.com/user-attachments/assets/4c883622-ba3a-47f8-b9bf-a322a7232a80" />
 
 ## Overview
-Todo API is a microservices-based application following the principles of Clean Architecture. It provides endpoints for managing tasks, and users in a library management system. The project is designed for scalability, separation of concerns, and maintainability.
+Todo API is a microservices-based application following the principles of Clean Architecture. It provides endpoints for managing tasks, and users in a kanban management system. The project is designed for scalability, separation of concerns, and maintainability.
 
 ## Architecture
 The project adopts Clean Architecture, separating the application into distinct layers:
