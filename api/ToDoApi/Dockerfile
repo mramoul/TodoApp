@@ -1,38 +1,29 @@
-# -------------------------------
-# Build Stage
-# -------------------------------
+# Use the official .NET 9 SDK image for building the application
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /src
+WORKDIR /app
 
-# Copy solution file and project files
-COPY ../*.sln .
-COPY *.csproj ./ 
-COPY ./ ./
+# Copy everything from the project root to the container
+COPY . .
 
 # Restore dependencies
 RUN dotnet restore
 
-# Build and publish
-RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
+# Build the application in Release mode
+RUN dotnet build -c Release -o /app/build
 
-# -------------------------------
-# Runtime Stage
-# -------------------------------
+# Publish the application
+RUN dotnet publish -c Release -o /app/publish
+
+# Use the official .NET runtime image for running the application
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
 
-# Copy published app
+# Copy the published files from the build stage
 COPY --from=build /app/publish .
 
-# Copy SQLite database
-COPY ./todo.db ./
-
-# Ensure database is writable
-RUN chmod 666 todo.db
-
-# Expose port
+# Expose the application's port
 EXPOSE 5001
-ENV ASPNETCORE_URLS=http://+:5001
+ENV ASPNETCORE_URLS=http://+:5001 
 
 # Start the application
 ENTRYPOINT ["dotnet", "ToDoApi.dll"]
