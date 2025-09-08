@@ -22,6 +22,7 @@ The project adopts Clean Architecture, separating the application into distinct 
   - ASP.NET Core Minimal API
   - Swagger (for API documentation)
   - MediatR (for CQRS)
+  - Mapster (Auto mapping)
   - Entity Framework Core (for data access)
 
 ## API Endpoints
