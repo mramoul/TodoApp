@@ -54,7 +54,7 @@ cd api
 docker build -t todo-api ./todoapi
 docker run -p 5001:5001 todo-api
 ```
-##UI
+## UI
 At the root of the project "TodoApp"
 ```bash
 docker build -t todo-ui ./ui
